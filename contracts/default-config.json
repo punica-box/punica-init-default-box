@@ -1,0 +1,31 @@
+{
+    "defaultWallet": "wallet.json",
+    "password":{
+    },
+    "deployConfig": {
+        "name": "contract name",
+        "version": "contract version",
+        "author": "the author of contract",
+        "email": "email address",
+        "desc": "a description for your contract",
+        "needStorage": true,
+        "payer": "the base58 encode address that indicate which account will pay for your deploy contract transaction",
+        "gasPrice": 500,
+        "gasLimit": 21000000
+    },
+    "invokeConfig": {
+        "abi": "hello_ontology_abi.json",
+        "defaultPayer": "",
+        "gasPrice": 500,
+        "gasLimit": 20000,
+        "functions": {
+            "Hello": {
+                "params": {
+                    "msg": "String:test"
+                },
+                "signers": {},
+                "preExec": true
+            }
+        }
+    }
+}
