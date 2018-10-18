@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a default box DApp project for [punica-python](https://github.com/ontio-community/punica-python).
+This is a default box DApp project for [punica-python](https://github.com/punicasuite/punica-python).
 
 ## Getting started
 
