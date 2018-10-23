@@ -18,14 +18,15 @@
         "defaultPayer": "",
         "gasPrice": 500,
         "gasLimit": 20000,
-        "functions": {
-            "Hello": {
+        "functions": [
+            {
+                "name":"Hello",
                 "params": {
                     "msg": "String:test"
                 },
                 "signers": {},
                 "preExec": true
             }
-        }
+        ]
     }
 }
