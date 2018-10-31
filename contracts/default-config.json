@@ -12,9 +12,9 @@
         "email": "email address",
         "desc": "a description for your contract",
         "needStorage": true,
-        "payer": "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
+        "payer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
         "gasPrice": 500,
-        "gasLimit": 21000000
+        "gasLimit": 31000000
     },
     "invokeConfig": {
         "abi": "hello_ontology_abi.json",
