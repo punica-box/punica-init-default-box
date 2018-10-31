@@ -1,7 +1,9 @@
 {
     "defaultWallet": "wallet.json",
     "password":{
-        "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6":"password"
+        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ":"password",
+        "AecaeSEBkt5GcBCxwz1F41TvdjX3dnKBkJ":"password",
+        "AQvZMDecMoCi2y4V6QKdJBtHW1eV7Vbaof":"password"
     },
     "deployConfig": {
         "name": "contract name",
@@ -16,7 +18,7 @@
     },
     "invokeConfig": {
         "abi": "hello_ontology_abi.json",
-        "defaultPayer": "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
+        "defaultPayer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
         "gasPrice": 500,
         "gasLimit": 20000,
         "functions": [
@@ -28,7 +30,7 @@
                 "signers": {
                     "m": 1,
                     "signer": [
-                        "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6"
+                        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
                     ]
                 },
                 "preExec": true
