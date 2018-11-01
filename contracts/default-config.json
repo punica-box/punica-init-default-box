@@ -23,7 +23,7 @@
         "gasLimit": 20000,
         "functions": [
             {
-                "name":"Hello",
+                "name":"hello",
                 "params": {
                     "msg": "String:test"
                 },

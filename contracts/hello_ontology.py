@@ -2,13 +2,13 @@ from boa.interop.System.Runtime import Log
 
 
 def Main(operation, args):
-    if operation == 'Hello':
+    if operation == 'hello':
         msg = args[0]
-        return Hello(msg)
+        return hello(msg)
 
     return False
 
 
-def Hello(msg):
+def hello(msg):
     Log(msg)
     return True
