@@ -57,7 +57,7 @@
             "id": "keys-1",
             "key": "dsSZMHNGbbvWWoNiRNBWl46iUuGJ0QX6pH+5yJyZZ49VhD55lObAyIa/NI0Lu2Zg",
             "parameters": {
-                "curve": "secp256r1"
+                "curve": "P-256"
             },
             "publicKey": "03f631f975560afc7bf47902064838826ec67794ddcdbcc6f0a9c7b91fc8502583",
             "salt": "TbIyGI+emIoMvrDvknCCIg=="
@@ -75,7 +75,7 @@
             "id": "keys-1",
             "key": "wmyE6YmLUKbpuvhgA1arPbJHMfDOiaOUlny/LwoH4o8/KtPpRbVwgeSRwjpa88F9",
             "parameters": {
-                "curve": "secp256r1"
+                "curve": "P-256"
             },
             "publicKey": "03624058e31c2830320751a62598f726f70496c534906814d9a77363a2bffa95fe",
             "salt": "9mHuICV2menJ6qri6z3JmA=="
@@ -93,7 +93,7 @@
             "id": "keys-1",
             "key": "7KAPfhtdQyziD+9cNlSxZk2gKUfu994tg0yP2vZPFmSqUQf0E2zSymgME+y7xZqt",
             "parameters": {
-                "curve": "secp256r1"
+                "curve": "P-256"
             },
             "publicKey": "037db763291c98e08108d7df9a66aacc27d1023112c86e7b19e0747f7aa89fc2f7",
             "salt": "sx7GsdbaBL0eOJMA3+1V4A=="
