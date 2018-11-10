@@ -6,7 +6,7 @@
         "AQvZMDecMoCi2y4V6QKdJBtHW1eV7Vbaof": "password"
     },
     "deployConfig": {
-        "name": "contract name",
+        "name": "contract name ",
         "version": "contract version",
         "author": "the author of contract",
         "email": "email address",
