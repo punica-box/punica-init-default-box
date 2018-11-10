@@ -1,9 +1,9 @@
 {
     "defaultWallet": "wallet.json",
-    "password":{
-        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ":"password",
-        "AecaeSEBkt5GcBCxwz1F41TvdjX3dnKBkJ":"password",
-        "AQvZMDecMoCi2y4V6QKdJBtHW1eV7Vbaof":"password"
+    "password": {
+        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ": "password",
+        "AecaeSEBkt5GcBCxwz1F41TvdjX3dnKBkJ": "password",
+        "AQvZMDecMoCi2y4V6QKdJBtHW1eV7Vbaof": "password"
     },
     "deployConfig": {
         "name": "contract name",
@@ -13,17 +13,17 @@
         "desc": "a description for your contract",
         "needStorage": true,
         "payer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-        "gasPrice": 500,
+        "gasPrice": 0,
         "gasLimit": 31000000
     },
     "invokeConfig": {
         "abi": "hello_ontology_abi.json",
         "defaultPayer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-        "gasPrice": 500,
+        "gasPrice": 0,
         "gasLimit": 20000,
         "functions": [
             {
-                "name":"hello",
+                "name": "hello",
                 "params": {
                     "msg": "String:test"
                 },
@@ -33,6 +33,65 @@
                         "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
                     ]
                 },
+                "preExec": true
+            },
+            {
+                "name": "testListNum",
+                "params": {
+                    "msg": [1,2,3,4,5]
+                },
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "name": "testListNum2",
+                "params": {
+                    "msgList": [1,2,3,4,5],
+                    "msg": "String:test"
+                },
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "name": "testListStr",
+                "params": {
+                    "msgList": [
+                        "String:hello",
+                        "String:world"
+                    ],
+                    "msg":"String:test"
+                },
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "name": "testListByteArray",
+                "params": {
+                    "msgList": [
+                        "ByteArray:Hello",
+                        "ByteArray:world"
+                    ],
+                    "msg": "String:hello"
+                },
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "name": "testListStruct",
+                "params": {
+                    "msgList": [
+                        {
+                            "name": "String:hello",
+                            "age": 1
+                        },
+                        {
+                            "name": "String:hello2",
+                            "age": 2
+                        }
+                    ],
+                    "msg": "String:test"
+                },
+                "signers": {},
                 "preExec": true
             }
         ]
