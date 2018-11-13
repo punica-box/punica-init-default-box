@@ -13,19 +13,19 @@
         "desc": "a description for your contract",
         "needStorage": true,
         "payer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-        "gasPrice": 500,
+        "gasPrice": 0,
         "gasLimit": 31000000
     },
     "invokeConfig": {
         "abi": "hello_ontology_abi.json",
         "defaultPayer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-        "gasPrice": 500,
+        "gasPrice": 0,
         "gasLimit": 20000,
         "functions": [
             {
                 "name": "hello",
                 "params": {
-                    "msg": "String:test"
+                    "msg": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
                 },
                 "signers": {
                     "m": 1,
@@ -38,16 +38,28 @@
             {
                 "name": "testListNum",
                 "params": {
-                    "msg": [1,2,3,4,5]
+                    "msg": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]
                 },
                 "signers": {},
                 "preExec": true
             },
             {
-                "name": "testListNum2",
+                "name": "testListNumStr",
                 "params": {
-                    "msgList": [1,2,3,4,5],
-                    "msg": "String:test"
+                    "bbb": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "aaa": "String:test"
                 },
                 "signers": {},
                 "preExec": true
@@ -59,7 +71,7 @@
                         "String:hello",
                         "String:world"
                     ],
-                    "msg":"String:test"
+                    "msg": "String:test"
                 },
                 "signers": {},
                 "preExec": true
@@ -78,6 +90,23 @@
             },
             {
                 "name": "testListStruct",
+                "params": {
+                    "msgList": [
+                        {
+                            "name": "String:hello",
+                            "age": 1
+                        },
+                        {
+                            "name": "String:hello2",
+                            "age": 2
+                        }
+                    ]
+                },
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "name": "testListStructStr",
                 "params": {
                     "msgList": [
                         {

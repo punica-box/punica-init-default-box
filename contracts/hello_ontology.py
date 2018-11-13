@@ -9,13 +9,13 @@ def Main(operation, args):
             return False
         msgList = args[0]
         return testListNum(msgList)
-    if operation == 'testListNum2':
+    if operation == 'testListNumStr':
         Notify([args])
         if len(args) != 2:
             return False
         msgList = args[0]
         msg = args[1]
-        return testListNum2(msgList, msg)
+        return testListNumStr(msgList, msg)
     if operation == 'testListStr':
         if len(args) != 2:
             return False
@@ -29,6 +29,10 @@ def Main(operation, args):
         msg = args[1]
         return testListByteArray(msgList, msg)
     if operation == 'testListStruct':
+        Notify(args)
+        msgList = args[0]
+        return testListStruct(msgList)
+    if operation == 'testListStructStr':
         if len(args) !=2:
             return False
         msgList = args[0]
@@ -44,7 +48,7 @@ def testListNum(msg):
     Notify([msg])
     return msg
 
-def testListNum2(msgList, msg):
+def testListNumStr(msgList, msg):
     Notify([msgList])
     Notify([msg])
     resList = []
@@ -66,11 +70,12 @@ def testListByteArray(msgList, msg):
     resList.append(msgList)
     resList.append(msg)
     return resList
-def testListStruct(msgList, msg):
-    Notify([msg])
+def testListStruct(msgList):
+    Notify([msgList])
+    return msgList
+def testListStructStr(msgList, msg):
+    Notify([msgList, msg])
     resList = []
-    for m in msgList:
-        Notify([m])
-        resList.append(m)
+    resList.append(msgList)
     resList.append(msg)
     return resList
