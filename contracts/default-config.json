@@ -165,11 +165,9 @@
                 "args": [
                   {
                     "state":[
-
                           "ByteArray:ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
                            "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
                            1
-
                     ]
                   },
                   {
@@ -188,7 +186,6 @@
                         "AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve"
                     ]
                 },
-                "payer": "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
                 "preExec": false
             }
         ]
