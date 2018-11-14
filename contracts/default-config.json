@@ -23,10 +23,27 @@
         "gasLimit": 20000,
         "functions": [
             {
-                "name": "hello",
-                "params": {
-                    "msg": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
-                },
+                "operation": "testHello",
+                "args": [
+                    {
+                        "msgBool": true
+                    },
+                    {
+                        "msgInt": 100
+                    },
+                    {
+                        "msgByteArray": "ByteArray:test"
+                    },
+                    {
+                        "msgStr": "String:test"
+                    },
+                    {
+                        "msgHex": "Hex:0a"
+                    },
+                    {
+                        "msgAddress": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                    }
+                ],
                 "signers": {
                     "m": 1,
                     "signer": [
@@ -36,92 +53,143 @@
                 "preExec": true
             },
             {
-                "name": "testListNum",
-                "params": {
-                    "msg": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
+                "operation": "testNumList",
+                "args": [
+                    {
+                        "numList": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ]
+                    }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "testNumListAndStr",
+                "args": [
+                    {
+                        "numList": [
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ]
+                    },
+                    {
+                        "msgStr": "String:test"
+                    }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "testStrListAndStr",
+                "args": [
+                    {
+                        "strList": [
+                            "String:hello",
+                            "String:world"
+                        ]
+                    },
+                    {
+                        "msg": "String:test"
+                    }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "testByteArrayListAndStr",
+                "args": [
+                    {
+                        "bytearrayList": [
+                            "ByteArray:Hello",
+                            "ByteArray:world"
+                        ]
+                    },
+                    {
+                        "msgStr": "String:hello"
+                    }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "testStructList",
+                "args": [
+                  {
+                      "structList": [
+                        [
+                          "String:hello",
+                          1
+                        ],
+                        [
+                          "String:hello2",
+                          2
+                        ]
+                      ]
+                  }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "testStructListAndStr",
+                "args": [
+                  {
+                      "structList": [
+                          [
+                            "String:hello",
+                             1
+                          ],
+                          [
+                            "String:hello2",
+                             2
+                          ]
+                      ]
+                  },
+                  {
+                    "msgStr": "String:test"
+                  }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "transferMulti",
+                "args": [
+                  {
+                    "state":[
+
+                          "ByteArray:ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
+                           "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
+                           1
+
+                    ]
+                  },
+                  {
+                    "state":
+                      [
+                        "ByteArray:ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
+                         "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
+                         1
+                      ]
+                  }
+                ],
+                "signers": {
+                    "m": 1,
+                    "signer": [
+                        "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
+                        "AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve"
                     ]
                 },
-                "signers": {},
-                "preExec": true
-            },
-            {
-                "name": "testListNumStr",
-                "params": {
-                    "bbb": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                    ],
-                    "aaa": "String:test"
-                },
-                "signers": {},
-                "preExec": true
-            },
-            {
-                "name": "testListStr",
-                "params": {
-                    "msgList": [
-                        "String:hello",
-                        "String:world"
-                    ],
-                    "msg": "String:test"
-                },
-                "signers": {},
-                "preExec": true
-            },
-            {
-                "name": "testListByteArray",
-                "params": {
-                    "msgList": [
-                        "ByteArray:Hello",
-                        "ByteArray:world"
-                    ],
-                    "msg": "String:hello"
-                },
-                "signers": {},
-                "preExec": true
-            },
-            {
-                "name": "testListStruct",
-                "params": {
-                    "msgList": [
-                        {
-                            "name": "String:hello",
-                            "age": 1
-                        },
-                        {
-                            "name": "String:hello2",
-                            "age": 2
-                        }
-                    ]
-                },
-                "signers": {},
-                "preExec": true
-            },
-            {
-                "name": "testListStructStr",
-                "params": {
-                    "msgList": [
-                        {
-                            "name": "String:hello",
-                            "age": 1
-                        },
-                        {
-                            "name": "String:hello2",
-                            "age": 2
-                        }
-                    ],
-                    "msg": "String:test"
-                },
-                "signers": {},
-                "preExec": true
+                "payer": "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
+                "preExec": false
             }
         ]
     }
