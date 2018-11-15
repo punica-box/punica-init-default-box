@@ -22,41 +22,48 @@
         "gasPrice": 0,
         "gasLimit": 20000,
         "functions": [
-            {
-                "operation": "testHello",
-                "args": [
-                    {
-                        "msgBool": true
-                    },
-                    {
-                        "msgInt": 100
-                    },
-                    {
-                        "msgByteArray": "ByteArray:test"
-                    },
-                    {
-                        "msgStr": "String:test"
-                    },
-                    {
-                        "msgHex": "Hex:0a"
-                    },
-                    {
-                        "msgAddress": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
-                    }
-                ],
-                "signers": {
-                    "m": 1,
-                    "signer": [
-                        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
-                    ]
-                },
-                "preExec": true
-            },
+          {
+              "operation": "testHello",
+              "args": [
+                  {
+                      "name": "msgBool",
+                      "value": true
+                  },
+                  {
+                      "name":"msgInt",
+                      "value": 100
+                  },
+                  {
+                     "name":"msgByteArray",
+                      "value": "ByteArray:test"
+                  },
+                  {
+                      "name":"msgStr",
+                      "value": "String:test"
+                  },
+                  {
+                      "name":"msgHex",
+                      "value": "Hex:0a"
+                  },
+                  {
+                      "name":"msgAddress",
+                      "value": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                  }
+              ],
+              "signers": {
+                  "m": 1,
+                  "signer": [
+                      "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                  ]
+              },
+              "preExec": true
+          },
             {
                 "operation": "testNumList",
                 "args": [
                     {
-                        "numList": [
+                        "name": "numList",
+                        "value": [
                             1,
                             2,
                             3,
@@ -72,7 +79,8 @@
                 "operation": "testNumListAndStr",
                 "args": [
                     {
-                        "numList": [
+                        "name": "numList",
+                        "value": [
                             1,
                             2,
                             3,
@@ -81,7 +89,8 @@
                         ]
                     },
                     {
-                        "msgStr": "String:test"
+                        "name": "msgStr",
+                        "value": "String:test"
                     }
                 ],
                 "signers": {},
@@ -91,13 +100,15 @@
                 "operation": "testStrListAndStr",
                 "args": [
                     {
-                        "strList": [
+                        "name": "strList",
+                        "value": [
                             "String:hello",
                             "String:world"
                         ]
                     },
                     {
-                        "msg": "String:test"
+                        "name": "msgStr",
+                        "value": "String:test"
                     }
                 ],
                 "signers": {},
@@ -107,13 +118,15 @@
                 "operation": "testByteArrayListAndStr",
                 "args": [
                     {
-                        "bytearrayList": [
+                        "name": "bytearrayList",
+                        "value": [
                             "ByteArray:Hello",
                             "ByteArray:world"
                         ]
                     },
                     {
-                        "msgStr": "String:hello"
+                        "name": "msgStr",
+                        "value": "String:hello"
                     }
                 ],
                 "signers": {},
@@ -122,18 +135,19 @@
             {
                 "operation": "testStructList",
                 "args": [
-                  {
-                      "structList": [
-                        [
-                          "String:hello",
-                          1
-                        ],
-                        [
-                          "String:hello2",
-                          2
+                    {
+                        "name": "structList",
+                        "value": [
+                            [
+                                "String:hello",
+                                1
+                            ],
+                            [
+                                "String:hello2",
+                                2
+                            ]
                         ]
-                      ]
-                  }
+                    }
                 ],
                 "signers": {},
                 "preExec": true
@@ -141,52 +155,26 @@
             {
                 "operation": "testStructListAndStr",
                 "args": [
-                  {
-                      "structList": [
-                          [
-                            "String:hello",
-                             1
-                          ],
-                          [
-                            "String:hello2",
-                             2
-                          ]
-                      ]
-                  },
-                  {
-                    "msgStr": "String:test"
-                  }
+                    {
+                        "name": "structList",
+                        "value": [
+                            [
+                                "String:hello",
+                                1
+                            ],
+                            [
+                                "String:hello2",
+                                2
+                            ]
+                        ]
+                    },
+                    {
+                        "name": "msgStr",
+                        "value": "String:test"
+                    }
                 ],
                 "signers": {},
                 "preExec": true
-            },
-            {
-                "operation": "transferMulti",
-                "args": [
-                  {
-                    "state":[
-                          "ByteArray:ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
-                           "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
-                           1
-                    ]
-                  },
-                  {
-                    "state":
-                      [
-                        "ByteArray:ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
-                         "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
-                         1
-                      ]
-                  }
-                ],
-                "signers": {
-                    "m": 1,
-                    "signer": [
-                        "ANH5bHrrt111XwNEnuPZj6u95Dd6u7G4D6",
-                        "AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve"
-                    ]
-                },
-                "preExec": false
             }
         ]
     }
