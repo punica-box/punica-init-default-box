@@ -22,42 +22,42 @@
         "gasPrice": 0,
         "gasLimit": 20000,
         "functions": [
-          {
-              "operation": "testHello",
-              "args": [
-                  {
-                      "name": "msgBool",
-                      "value": true
-                  },
-                  {
-                      "name":"msgInt",
-                      "value": 100
-                  },
-                  {
-                     "name":"msgByteArray",
-                      "value": "ByteArray:test"
-                  },
-                  {
-                      "name":"msgStr",
-                      "value": "String:test"
-                  },
-                  {
-                      "name":"msgHex",
-                      "value": "Hex:0a"
-                  },
-                  {
-                      "name":"msgAddress",
-                      "value": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
-                  }
-              ],
-              "signers": {
-                  "m": 1,
-                  "signer": [
-                      "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
-                  ]
-              },
-              "preExec": true
-          },
+            {
+                "operation": "testHello",
+                "args": [
+                    {
+                        "name": "msgBool",
+                        "value": true
+                    },
+                    {
+                        "name": "msgInt",
+                        "value": 100
+                    },
+                    {
+                        "name": "msgByteArray",
+                        "value": "ByteArray:test"
+                    },
+                    {
+                        "name": "msgStr",
+                        "value": "String:test"
+                    },
+                    {
+                        "name": "msgHex",
+                        "value": "Hex:0a"
+                    },
+                    {
+                        "name": "msgAddress",
+                        "value": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                    }
+                ],
+                "signers": {
+                    "m": 1,
+                    "signer": [
+                        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                    ]
+                },
+                "preExec": true
+            },
             {
                 "operation": "testNumList",
                 "args": [
@@ -171,6 +171,37 @@
                     {
                         "name": "msgStr",
                         "value": "String:test"
+                    }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "testMap",
+                "args": [
+                    {
+                        "name": "key",
+                        "value": "String:key1"
+                    },
+                    {
+                        "name": "value",
+                        "value": "String:value1"
+                    }
+                ],
+                "signers": {
+                  "m":1,
+                  "signer":[
+                    "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                  ]
+                },
+                "preExec": false
+            },
+            {
+                "operation": "testGetMap",
+                "args": [
+                    {
+                        "name": "key",
+                        "value": "String:key1"
                     }
                 ],
                 "signers": {},
