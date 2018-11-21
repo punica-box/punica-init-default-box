@@ -3,15 +3,14 @@ from boa.interop.System.Storage import Put, Get, GetContext
 
 def Main(operation, args):
     if operation == 'testHello':
-        if len(args) != 6:
+        if len(args) != 5:
             return False
         msgBool = args[0]
         msgInt = args[1]
         msgByteArray = args[2]
         msgStr = args[3]
-        msgHex = args[4]
-        msgAddress = args[5]
-        return testHello(msgBool, msgInt, msgByteArray,msgStr,msgHex,msgAddress)
+        msgAddress = args[4]
+        return testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress)
     if operation == 'testNumList':
         if len(args) != 1:
             return False
@@ -59,14 +58,13 @@ def Main(operation, args):
         return testGetMap(key)
     return False
 
-def testHello(msgBool, msgInt, msgByteArray,msgStr,msgHex,msgAddress):
-    Notify(["testHello",msgBool, msgInt, msgByteArray,msgStr,msgHex,msgAddress])
+def testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress):
+    Notify(["testHello",msgBool, msgInt, msgByteArray,msgStr,msgAddress])
     resList = []
     resList.append(msgBool)
     resList.append(msgInt)
     resList.append(msgByteArray)
     resList.append(msgStr)
-    resList.append(msgHex)
     resList.append(msgAddress)
     return resList
 

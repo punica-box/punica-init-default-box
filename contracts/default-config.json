@@ -35,19 +35,15 @@
                     },
                     {
                         "name": "msgByteArray",
-                        "value": "ByteArray:test"
+                        "value": "ByteArray:74657374"
                     },
                     {
                         "name": "msgStr",
                         "value": "String:test"
                     },
                     {
-                        "name": "msgHex",
-                        "value": "Hex:0a"
-                    },
-                    {
                         "name": "msgAddress",
-                        "value": "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                        "value": "ByteArray:8f651d459b4f146380dab28e7cfb9d4bb9c3fcd1"
                     }
                 ],
                 "signers": {
