@@ -2,6 +2,11 @@ from boa.interop.System.Runtime import Notify
 from boa.interop.System.Storage import Put, Get, GetContext
 
 def Main(operation, args):
+    if operation == 'hello':
+        if len(args) != 1:
+            return False
+        msg = args[0]
+        return hello(msg)
     if operation == 'testHello':
         if len(args) != 5:
             return False
@@ -57,6 +62,9 @@ def Main(operation, args):
         key = args[0]
         return testGetMap(key)
     return False
+
+def hello(msg):
+    return msg
 
 def testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress):
     Notify(["testHello",msgBool, msgInt, msgByteArray,msgStr,msgAddress])
