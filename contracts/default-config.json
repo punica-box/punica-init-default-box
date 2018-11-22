@@ -68,7 +68,7 @@
                         ]
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -89,7 +89,7 @@
                         "value": "String:test"
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -107,7 +107,7 @@
                         "value": "String:test"
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -125,7 +125,7 @@
                         "value": "String:hello"
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -145,7 +145,7 @@
                         ]
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -169,7 +169,7 @@
                         "value": "String:test"
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -184,9 +184,9 @@
                         "value": "String:value1"
                     }
                 ],
-                "signers": {
+                "signature": {
                     "m": 1,
-                    "signer": [
+                    "signers": [
                         "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
                     ]
                 },
@@ -200,7 +200,7 @@
                         "value": "String:key1"
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             },
             {
@@ -211,7 +211,7 @@
                         "value": "String:sss"
                     }
                 ],
-                "signers": {},
+                "signature": {},
                 "preExec": true
             }
         ]
