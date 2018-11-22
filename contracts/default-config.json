@@ -46,9 +46,9 @@
                         "value": "ByteArray:8f651d459b4f146380dab28e7cfb9d4bb9c3fcd1"
                     }
                 ],
-                "signers": {
+                "signature": {
                     "m": 1,
-                    "signer": [
+                    "signers": [
                         "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
                     ]
                 },
