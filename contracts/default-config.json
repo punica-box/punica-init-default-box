@@ -21,6 +21,7 @@
         "defaultPayer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
         "gasPrice": 0,
         "gasLimit": 20000,
+        "sleepTime": 6,
         "functions": [
             {
                 "operation": "testHello",
