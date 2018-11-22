@@ -185,10 +185,10 @@
                     }
                 ],
                 "signers": {
-                  "m":1,
-                  "signer":[
-                    "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
-                  ]
+                    "m": 1,
+                    "signer": [
+                        "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                    ]
                 },
                 "preExec": false
             },
@@ -198,6 +198,17 @@
                     {
                         "name": "key",
                         "value": "String:key1"
+                    }
+                ],
+                "signers": {},
+                "preExec": true
+            },
+            {
+                "operation": "hello",
+                "args": [
+                    {
+                        "name": "msg",
+                        "value": "String:sss"
                     }
                 ],
                 "signers": {},
