@@ -6,6 +6,8 @@ This is a default box DApp project for [punica-python](https://github.com/punica
 
 ## Getting started
 
+The password in wallet is "password".
+
 ### Setting up the development environment
 
 There are a few technical requirements before we start. Please install the following:
