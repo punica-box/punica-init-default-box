@@ -188,11 +188,11 @@
                 "args": [
                     {
                         "name": "key",
-                        "value": "String:key1"
+                        "value": "String:hello"
                     },
                     {
-                        "name": "value",
-                        "value": "String:value1"
+                        "name": "key2",
+                        "value": 100
                     }
                 ],
                 "signature": {

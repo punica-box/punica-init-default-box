@@ -51,11 +51,8 @@ def Main(operation, args):
         msgStr = args[1]
         return testStructListAndStr(structList,msgStr)
     if operation == 'testMap':
-        if len(args) != 2:
-            return False
-        key = args[0]
-        value = args[1]
-        return testMap(key, value)
+        msg = args[0]
+        return testMap(msg)
     if operation == 'testGetMap':
         if len(args) != 1:
             return False
@@ -113,12 +110,11 @@ def testStructListAndStr(structList, msgStr):
     resList.append(msgStr)
     return resList
 
-def testMap(key, value):
-    map = {}
-    map[key] = value
+def testMap(msg):
+    map = Deserialize(msg)
     mapInfo = Serialize(map)
     Put(GetContext(), 'map_key', mapInfo)
-    return True
+    return map['key']
 def testGetMap(key):
     mapInfo = Get(GetContext(), 'map_key')
     map = Deserialize(mapInfo)
