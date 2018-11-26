@@ -187,12 +187,8 @@
                 "operation": "testMap",
                 "args": [
                     {
-                        "name": "key",
-                        "value": "String:hello"
-                    },
-                    {
-                        "name": "key2",
-                        "value": 100
+                        "name": "msg",
+                        "value": {"key":"value222"}
                     }
                 ],
                 "signature": {
@@ -208,7 +204,7 @@
                 "args": [
                     {
                         "name": "key",
-                        "value": "String:key1"
+                        "value": "String:key"
                     }
                 ],
                 "signature": {},
