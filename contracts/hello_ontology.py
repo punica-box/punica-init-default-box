@@ -61,6 +61,8 @@ def Main(operation, args):
             return False
         key = args[0]
         return testGetMap(key)
+    if operation == 'transferMulti':
+        return transferMulti(args)
     return False
 
 def hello(msg):
@@ -121,3 +123,18 @@ def testGetMap(key):
     mapInfo = Get(GetContext(), 'map_key')
     map = Deserialize(mapInfo)
     return map[key]
+def transfer(from_acct,to_acct,amount):
+    return True
+def transferMulti(args):
+    """
+    :param args: the parameter is an array, containing element like [from, to, amount]
+    :return: True means success, False or raising exception means failure.
+    """
+    for p in args:
+        if len(p) != 3:
+            # return False is wrong
+            raise Exception("transferMulti params error.")
+        if transfer(p[0], p[1], p[2]) == False:
+            # return False is wrong since the previous transaction will be successful
+            raise Exception("transferMulti failed.")
+    return True

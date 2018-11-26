@@ -69,7 +69,12 @@
                         ]
                     }
                 ],
-                "signature": {},
+                "signature": {
+                  "m": 2,
+                  "signers": [
+                      "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ", "AecaeSEBkt5GcBCxwz1F41TvdjX3dnKBkJ"
+                  ]
+                },
                 "preExec": true
             },
             {
@@ -214,7 +219,36 @@
                 ],
                 "signature": {},
                 "preExec": true
-            }
+            },
+            {
+              "operation": "transferMulti",
+              "args": [
+                  {
+                     "name":"state",
+                      "value": [
+                          "ByteArray:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
+                          "ByteArray:ARLvwmvJ38stT9MKD78YtpDak3MENZkoxF",
+                          1
+                      ]
+                  },
+                  {
+                      "name":"state",
+                      "value": [
+                          "ByteArray:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
+                          "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
+                          1
+                      ]
+                  }
+              ],
+              "signature": {
+                  "m": 1,
+                  "signers": [
+                      "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ"
+                  ]
+              },
+              "payer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
+              "preExec": false
+          }
         ]
     }
 }
