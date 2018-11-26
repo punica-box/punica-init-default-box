@@ -74,8 +74,11 @@
                   "signers": [
                       "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ", "AecaeSEBkt5GcBCxwz1F41TvdjX3dnKBkJ"
                   ],
-                  "publicKeys":["03f631f975560afc7bf47902064838826ec67794ddcdbcc6f0a9c7b91fc8502583",
-                  "03624058e31c2830320751a62598f726f70496c534906814d9a77363a2bffa95fe"]
+                  "publicKeys":[
+                    "03f631f975560afc7bf47902064838826ec67794ddcdbcc6f0a9c7b91fc8502583",
+                    "03624058e31c2830320751a62598f726f70496c534906814d9a77363a2bffa95fe",
+                    "037db763291c98e08108d7df9a66aacc27d1023112c86e7b19e0747f7aa89fc2f7"
+                   ]
                 },
                 "preExec": false
             },
