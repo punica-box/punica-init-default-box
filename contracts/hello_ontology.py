@@ -123,6 +123,7 @@ def testGetMap(key):
     mapInfo = Get(GetContext(), 'map_key')
     map = Deserialize(mapInfo)
     return map[key]
+
 def transfer(from_acct,to_acct,amount):
     return True
 def transferMulti(args):
