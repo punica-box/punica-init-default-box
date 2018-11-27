@@ -188,7 +188,12 @@
                 "args": [
                     {
                         "name": "msg",
-                        "value": {"key":"value222"}
+                        "value": {
+                          "key":"String:hello2",
+                          "key2":"ByteArray:aabb",
+                          "key3":100,
+                          "key4":true
+                        }
                     }
                 ],
                 "signature": {
