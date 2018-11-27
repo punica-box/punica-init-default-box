@@ -189,10 +189,10 @@
                     {
                         "name": "msg",
                         "value": {
-                          "key":"String:hello2",
-                          "key2":"ByteArray:aabb",
-                          "key3":100,
-                          "key4":true
+                           "key":"String:hello2",
+                           "key2":"ByteArray:aabb",
+                           "key3":100,
+                           "key4":true
                         }
                     }
                 ],

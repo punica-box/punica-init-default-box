@@ -58,6 +58,14 @@ def Main(operation, args):
             return False
         key = args[0]
         return testGetMap(key)
+    if operation == 'testMapInMap':
+        msg = args[0]
+        return testMapInMap(msg)
+    if operation == 'testGetMapInMap':
+        if len(args) != 1:
+            return False
+        key = args[0]
+        return testGetMapInMap(key)
     if operation == 'transferMulti':
         return transferMulti(args)
     return False
@@ -111,12 +119,24 @@ def testStructListAndStr(structList, msgStr):
     return resList
 
 def testMap(msg):
-    map = Deserialize(msg)
+    map = msg #Deserialize(msg)
     mapInfo = Serialize(map)
     Put(GetContext(), 'map_key', mapInfo)
     return map['key']
 def testGetMap(key):
     mapInfo = Get(GetContext(), 'map_key')
+    map = Deserialize(mapInfo)
+    return map[key]
+
+def testMapInMap(msg):
+    map = msg #Deserialize(msg)
+    mapInfo = Serialize(map)
+    Notify(["mapInfo",mapInfo])
+    mapInfo2 = Serialize(map['key'])
+    Put(GetContext(), 'map_key2', mapInfo2)
+    return mapInfo2
+def testGetMapInMap(key):
+    mapInfo = Get(GetContext(), 'map_key2')
     map = Deserialize(mapInfo)
     return map[key]
 
