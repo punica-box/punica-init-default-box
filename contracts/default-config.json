@@ -192,7 +192,8 @@
                            "key":"String:hello2",
                            "key2":"ByteArray:aabb",
                            "key3":100,
-                           "key4":true
+                           "key4":true,
+                           "key5":["hello",100]
                         }
                     }
                 ],
