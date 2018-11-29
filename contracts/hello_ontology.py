@@ -134,7 +134,7 @@ def testMapInMap(msg):
     Notify(["mapInfo",mapInfo])
     mapInfo2 = Serialize(map['key'])
     Put(GetContext(), 'map_key2', mapInfo2)
-    return mapInfo2
+    return mapInfo
 def testGetMapInMap(key):
     mapInfo = Get(GetContext(), 'map_key2')
     map = Deserialize(mapInfo)
