@@ -20,7 +20,28 @@ public class ContractController {
     private static Logger logger = LoggerFactory.getLogger(ContractController.class);
 
     /**
-     * 发起测试请求
+     * allTest
+     */
+    @RequestMapping(value = "/allTest", method = RequestMethod.POST)
+    public void allTest() throws Exception{
+        logger.info("ContractController allTest");
+        ContractService.helloTest();
+        ContractService.testHelloTest();
+        ContractService.testNumListTest();
+        ContractService.testNumListAndStrTest();
+        ContractService.testStrListAndStrTest();
+        ContractService.testByteArrayListAndStrTest();
+        ContractService.testStructListTest();
+        ContractService.testStructListAndStrTest();
+        ContractService.testMapTest();
+        ContractService.testGetMapTest();
+        ContractService.testMapInMapTest();
+        ContractService.testGetMapInMapTest();
+        ContractService.testTransferMultiTest();
+    }
+
+    /**
+     * deployContractTest
      */
     @RequestMapping(value = "/deployContractTest", method = RequestMethod.POST)
     public void deployContractTest() throws Exception{
@@ -29,7 +50,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * helloTest
      */
     @RequestMapping(value = "/helloTest", method = RequestMethod.POST)
     public void helloTest() throws Exception{
@@ -38,7 +59,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testHelloTest
      */
     @RequestMapping(value = "/testHelloTest", method = RequestMethod.POST)
     public void testHelloTest() throws Exception{
@@ -47,7 +68,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testNumListTest
      */
     @RequestMapping(value = "/testNumListTest", method = RequestMethod.POST)
     public void testNumListTest() throws Exception{
@@ -56,7 +77,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testNumListAndStrTest
      */
     @RequestMapping(value = "/testNumListAndStrTest", method = RequestMethod.POST)
     public void testNumListAndStrTest() throws Exception{
@@ -65,7 +86,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testStrListAndStrTest
      */
     @RequestMapping(value = "/testStrListAndStrTest", method = RequestMethod.POST)
     public void testStrListAndStrTest() throws Exception{
@@ -74,7 +95,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testByteArrayListAndStrTest
      */
     @RequestMapping(value = "/testByteArrayListAndStrTest", method = RequestMethod.POST)
     public void testByteArrayListAndStrTest() throws Exception{
@@ -83,7 +104,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testStructListTest
      */
     @RequestMapping(value = "/testStructListTest", method = RequestMethod.POST)
     public void testStructListTest() throws Exception{
@@ -92,7 +113,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testStructListAndStrTest
      */
     @RequestMapping(value = "/testStructListAndStrTest", method = RequestMethod.POST)
     public void testStructListAndStrTest() throws Exception{
@@ -101,7 +122,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testMapTest
      */
     @RequestMapping(value = "/testMapTest", method = RequestMethod.POST)
     public void testMapTest() throws Exception{
@@ -110,7 +131,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testGetMapTest
      */
     @RequestMapping(value = "/testGetMapTest", method = RequestMethod.POST)
     public void testGetMapTest() throws Exception{
@@ -119,7 +140,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testMapInMapTest
      */
     @RequestMapping(value = "/testMapInMapTest", method = RequestMethod.POST)
     public void testMapInMapTest() throws Exception{
@@ -128,7 +149,7 @@ public class ContractController {
     }
 
     /**
-     * 发起测试请求
+     * testGetMapInMapTest
      */
     @RequestMapping(value = "/testGetMapInMapTest", method = RequestMethod.POST)
     public void testGetMapInMapTest() throws Exception{
@@ -138,7 +159,7 @@ public class ContractController {
 
 
     /**
-     * 发起测试请求
+     * testTransferMultiTest
      */
     @RequestMapping(value = "/testTransferMultiTest", method = RequestMethod.POST)
     public void testTransferMultiTest() throws Exception{
