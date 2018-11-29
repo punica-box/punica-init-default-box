@@ -67,7 +67,8 @@ def Main(operation, args):
         key = args[0]
         return testGetMapInMap(key)
     if operation == 'transferMulti':
-        return transferMulti(args)
+        states = args[0]
+        return transferMulti(states)
     return False
 
 def hello(msg):
@@ -142,12 +143,12 @@ def testGetMapInMap(key):
 
 def transfer(from_acct,to_acct,amount):
     return True
-def transferMulti(args):
+def transferMulti(states):
     """
-    :param args: the parameter is an array, containing element like [from, to, amount]
+    :param states: the parameter is an array, containing element like [from, to, amount]
     :return: True means success, False or raising exception means failure.
     """
-    for p in args:
+    for p in states:
         if len(p) != 3:
             # return False is wrong
             raise Exception("transferMulti params error.")

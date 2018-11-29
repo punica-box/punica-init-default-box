@@ -271,19 +271,18 @@
         "operation": "transferMulti",
         "args": [
           {
-            "name": "state",
+            "name": "args",
             "value": [
-              "ByteArray:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-              "ByteArray:ARLvwmvJ38stT9MKD78YtpDak3MENZkoxF",
-              1
-            ]
-          },
-          {
-            "name": "state",
-            "value": [
-              "ByteArray:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-              "ByteArray:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
-              1
+              [
+                "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
+                "Address:ARLvwmvJ38stT9MKD78YtpDak3MENZkoxF",
+                1
+              ],
+              [
+                "Address:AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
+                "Address:AazEvfQPcQ2GEFFPLF1ZLwQ7K5jDn81hve",
+                1
+              ]
             ]
           }
         ],
@@ -294,7 +293,7 @@
           ]
         },
         "payer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-        "preExec": false
+        "preExec": true
       }
     ]
   }
