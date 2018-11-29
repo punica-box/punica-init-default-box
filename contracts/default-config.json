@@ -139,8 +139,8 @@
           {
             "name": "bytearrayList",
             "value": [
-              "ByteArray:Hello",
-              "ByteArray:world"
+              "ByteArray:48656c6c6f",
+              "ByteArray:776f726c64"
             ]
           },
           {
