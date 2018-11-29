@@ -99,7 +99,7 @@ def testStructListAndStr(structList, msgStr):
     return resList
 
 def testMap(msg):
-    map = msg #Deserialize(msg)
+    map = msg
     mapInfo = Serialize(map)
     Put(GetContext(), 'map_key', mapInfo)
     return map['key']
@@ -109,7 +109,7 @@ def testGetMap(key):
     return map[key]
 
 def testMapInMap(msg):
-    map = msg #Deserialize(msg)
+    map = msg 
     mapInfo = Serialize(map)
     Notify(["mapInfo",mapInfo])
     mapInfo2 = Serialize(map['key'])
