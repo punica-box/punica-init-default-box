@@ -2,6 +2,8 @@ from boa.interop.System.Runtime import Notify
 from boa.interop.System.Storage import Put, Get, GetContext
 
 def Main(operation, args):
+    if operation == 'name':
+        return name()
     if operation == 'hello':
         if len(args) != 1:
             return False
@@ -16,30 +18,18 @@ def Main(operation, args):
         msgStr = args[3]
         msgAddress = args[4]
         return testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress)
-    if operation == 'testNumList':
+    if operation == 'testList':
         if len(args) != 1:
             return False
-        numList = args[0]
-        return testNumList(numList)
-    if operation == 'testNumListAndStr':
+        msgList = args[0]
+        return testList(msgList)
+    if operation == 'testListAndStr':
         Notify([args])
         if len(args) != 2:
             return False
-        numList = args[0]
-        msgStr = args[1]
-        return testNumListAndStr(numList, msgStr)
-    if operation == 'testStrListAndStr':
-        if len(args) != 2:
-            return False
-        strList = args[0]
-        msgStr = args[1]
-        return testStrListAndStr(strList, msgStr)
-    if operation == 'testByteArrayListAndStr':
-        if len(args) !=2:
-            return False
         msgList = args[0]
-        msg = args[1]
-        return testByteArrayListAndStr(msgList, msg)
+        msgStr = args[1]
+        return testListAndStr(msgList, msgStr)
     if operation == 'testStructList':
         Notify(args)
         structList = args[0]
@@ -71,6 +61,9 @@ def Main(operation, args):
         return transferMulti(states)
     return False
 
+def name():
+    return 'name'
+
 def hello(msg):
     return msg
 
@@ -84,28 +77,14 @@ def testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress):
     resList.append(msgAddress)
     return resList
 
-def testNumList(numList):
-    Notify(["testNumList", numList])
-    return numList
+def testList(msgList):
+    Notify(["testMsgList", msgList])
+    return msgList
 
-def testNumListAndStr(numList, msgStr):
-    Notify(["testNumListAndStr",numList,msgStr])
+def testListAndStr(msgList, msgStr):
+    Notify(["testListAndStr",msgList,msgStr])
     resList = []
-    resList.append(numList)
-    resList.append(msgStr)
-    return resList
-
-def testStrListAndStr(strList, msgStr):
-    Notify(["testStrListAndStr", strList, msgStr])
-    resList = []
-    resList.append(strList)
-    resList.append(msgStr)
-    return resList
-
-def testByteArrayListAndStr(bytearrayList, msgStr):
-    Notify(["testByteArrayListAndStr", bytearrayList, msgStr])
-    resList = []
-    resList.append(bytearrayList)
+    resList.append(msgList)
     resList.append(msgStr)
     return resList
 
@@ -138,17 +117,18 @@ def testMapInMap(msg):
     return mapInfo
 def testGetMapInMap(key):
     mapInfo = Get(GetContext(), 'map_key2')
+    Notify(["testGetMapInMap",mapInfo])
     map = Deserialize(mapInfo)
     return map[key]
 
 def transfer(from_acct,to_acct,amount):
     return True
-def transferMulti(states):
+def transferMulti(args):
     """
-    :param states: the parameter is an array, containing element like [from, to, amount]
+    :param args: the parameter is an array, containing element like [from, to, amount]
     :return: True means success, False or raising exception means failure.
     """
-    for p in states:
+    for p in args:
         if len(p) != 3:
             # return False is wrong
             raise Exception("transferMulti params error.")

@@ -24,6 +24,12 @@
     "sleepTime": 6,
     "functions": [
       {
+        "operation": "name",
+        "args": [],
+        "signature": {},
+        "preExec": true
+      },
+      {
         "operation": "hello",
         "args": [
           {
@@ -67,16 +73,21 @@
         "preExec": true
       },
       {
-        "operation": "testNumList",
+        "operation": "testList",
         "args": [
           {
-            "name": "numList",
+            "name": "msgList",
             "value": [
-              1,
-              2,
-              3,
-              4,
-              5
+              true,
+              100,
+              "ByteArray:aabb",
+              "String:hello",
+              [
+                true,
+                100,
+                "ByteArray:aabb",
+                "String:hello"
+              ]
             ]
           }
         ],
@@ -92,60 +103,29 @@
             "037db763291c98e08108d7df9a66aacc27d1023112c86e7b19e0747f7aa89fc2f7"
           ]
         },
-        "preExec": false
-      },
-      {
-        "operation": "testNumListAndStr",
-        "args": [
-          {
-            "name": "numList",
-            "value": [
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          },
-          {
-            "name": "msgStr",
-            "value": "String:test"
-          }
-        ],
-        "signature": {},
         "preExec": true
       },
       {
-        "operation": "testStrListAndStr",
+        "operation": "testListAndStr",
         "args": [
           {
-            "name": "strList",
+            "name": "msgList",
             "value": [
+              true,
+              100,
+              "ByteArray:aabb",
               "String:hello",
-              "String:world"
+              [
+                true,
+                100,
+                "ByteArray:aabb",
+                "String:hello"
+              ]
             ]
           },
           {
             "name": "msgStr",
             "value": "String:test"
-          }
-        ],
-        "signature": {},
-        "preExec": true
-      },
-      {
-        "operation": "testByteArrayListAndStr",
-        "args": [
-          {
-            "name": "bytearrayList",
-            "value": [
-              "ByteArray:48656c6c6f",
-              "ByteArray:776f726c64"
-            ]
-          },
-          {
-            "name": "msgStr",
-            "value": "String:hello"
           }
         ],
         "signature": {},
@@ -254,7 +234,7 @@
           }
         ],
         "signature": {},
-        "preExec": false
+        "preExec": true
       },
       {
         "operation": "testGetMapInMap",

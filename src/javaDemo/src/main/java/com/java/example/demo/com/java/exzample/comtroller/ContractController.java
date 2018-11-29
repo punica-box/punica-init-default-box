@@ -25,12 +25,11 @@ public class ContractController {
     @RequestMapping(value = "/allTest", method = RequestMethod.POST)
     public void allTest() throws Exception{
         logger.info("ContractController allTest");
+        ContractService.nameTest();
         ContractService.helloTest();
         ContractService.testHelloTest();
-        ContractService.testNumListTest();
-        ContractService.testNumListAndStrTest();
-        ContractService.testStrListAndStrTest();
-        ContractService.testByteArrayListAndStrTest();
+        ContractService.testListTest();
+        ContractService.testListAndStrTest();
         ContractService.testStructListTest();
         ContractService.testStructListAndStrTest();
         ContractService.testMapTest();
@@ -73,7 +72,7 @@ public class ContractController {
     @RequestMapping(value = "/testNumListTest", method = RequestMethod.POST)
     public void testNumListTest() throws Exception{
         logger.info("ContractController testNumListTest");
-        ContractService.testNumListTest();
+        ContractService.testListTest();
     }
 
     /**
@@ -82,25 +81,7 @@ public class ContractController {
     @RequestMapping(value = "/testNumListAndStrTest", method = RequestMethod.POST)
     public void testNumListAndStrTest() throws Exception{
         logger.info("ContractController testNumListAndStrTest");
-        ContractService.testNumListAndStrTest();
-    }
-
-    /**
-     * testStrListAndStrTest
-     */
-    @RequestMapping(value = "/testStrListAndStrTest", method = RequestMethod.POST)
-    public void testStrListAndStrTest() throws Exception{
-        logger.info("ContractController testStrListAndStrTest");
-        ContractService.testStrListAndStrTest();
-    }
-
-    /**
-     * testByteArrayListAndStrTest
-     */
-    @RequestMapping(value = "/testByteArrayListAndStrTest", method = RequestMethod.POST)
-    public void testByteArrayListAndStrTest() throws Exception{
-        logger.info("ContractController testByteArrayListAndStrTest");
-        ContractService.testByteArrayListAndStrTest();
+        ContractService.testListAndStrTest();
     }
 
     /**
