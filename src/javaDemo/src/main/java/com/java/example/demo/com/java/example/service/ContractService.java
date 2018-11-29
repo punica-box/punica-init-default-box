@@ -359,9 +359,7 @@ public class ContractService {
         System.out.println(preResult);
 
         byte[] mBytes = Helper.hexToBytes(JSON.parseObject(preResult).getString("Result"));
-//        ByteArrayInputStream ms = new ByteArrayInputStream(mBytes);
-//        BinaryReader reader = new BinaryReader(ms);
-//        Object obj = BuildParams.deserializeItem(reader);
+//        Object obj = BuildParams.deserializeItem(mBytes);
 //        System.out.println(JSON.toJSONString(obj));
 
         String result = invokeContract(params, account, 20000, 500,false);
