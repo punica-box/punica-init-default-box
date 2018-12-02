@@ -1,4 +1,4 @@
-# Hello Python Box
+# Hello Ontology
 
 [English](README.md) | 中文
 
@@ -11,7 +11,7 @@
 
 ## 1. 简介
 
-欢迎来到本体，一个去中心化的世界正在等待着你。 `hello-python-box` 是一个教程性的 `python` 项目，它提供了有关如何使 用`ontology-python-sdk` 与本体区块链中的智能合约进行交互的基本示例。
+欢迎来到本体，一个去中心化的世界正在等待着你。 `hello-ontology` 是一个教程性的 `python` 项目，它提供了有关如何使 用`ontology-python-sdk` 与本体区块链中的智能合约进行交互的基本示例。
 
 ![ecosystem](img/ecosystem.png)
 
@@ -51,7 +51,7 @@ pip install punica
 下载 `hello-python-box`。
 
 ```shell
-punica unbox hello-python
+punica init
 ```
 
 创建虚拟环境（可选的）。

@@ -11,7 +11,7 @@ English | [中文](README_CN.md)
 
 ## 1. Introduction
 
-Welcome to ontology, a decentralized world is waiting for your. `hello-python-box` is an tutorial `python` project, it provide basic example about how to use `ontology-python-sdk` to interact with your smart contract in ontology blockchain.
+Welcome to ontology, a decentralized world is waiting for your. `hello-ontology` is an tutorial `python` project, it provide basic example about how to use `ontology-python-sdk` to interact with your smart contract in ontology blockchain.
 
 ![ecosystem](img/ecosystem.png)
 
@@ -51,7 +51,7 @@ pip install punica
 Download the `hello-python-box`.
 
 ```shell
-punica unbox hello-python
+punica init
 ```
 
 Create virtual environments (optional).

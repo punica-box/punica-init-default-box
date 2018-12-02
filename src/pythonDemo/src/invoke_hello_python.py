@@ -30,128 +30,69 @@ class InvokeHelloPython(object):
         events = self.__abi.get('events', list())
         self.__abi_info = AbiInfo(hex_contract_address, entry_point, functions, events)
 
-    def echo(self, msg: str) -> str:
+    def name(self):
+        name_func = self.__abi_info.get_function('name')
+        response = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0, name_func,
+                                                        True)
+        response = binascii.a2b_hex(response)
+        return response.decode('ascii')
+
+    def hello(self, msg: str) -> str:
         if not isinstance(msg, str):
             raise RuntimeError('the type of msg should be str')
-        echo = self.__abi_info.get_function('echo')
+        echo = self.__abi_info.get_function('hello')
         echo.set_params_value((msg,))
         response = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0, echo, True)
         response = binascii.a2b_hex(response)
         return response.decode('ascii')
 
-    def notify_args(self, bool_args: bool, int_args: int, list_args: list, str_args: str, bytes_address_args: bytes,
-                    acct: Account, payer_acct: Account, gas_limit: int, gas_price: int) -> str:
-        notify_args = self.__abi_info.get_function('notify_args')
-        notify_args.set_params_value((bool_args, int_args, list_args, str_args, bytes_address_args))
+    def test_hello(self, bool_msg, int_msg, bytes_msg, str_msg, bytes_address_msg: bytes, acct: Account,
+                   payer_acct: Account, gas_limit: int, gas_price: int) -> str:
+        notify_args = self.__abi_info.get_function('testHello')
+        notify_args.set_params_value((bool_msg, int_msg, bytes_msg, str_msg, bytes_address_msg))
         tx_hash = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, acct, payer_acct, gas_limit,
                                                        gas_price, notify_args, False)
         return tx_hash
 
-    def query_notify_args_event(self, tx_hash: str):
-        event = self.__sdk.rpc.get_smart_contract_event_by_tx_hash(tx_hash)
-        event = event.get('Notify', list())
-        if len(event) == 0:
-            return event
-        event = event[0]
-        event = event.get('States', list())
-        if len(event) == 0:
-            return event
-        event[0] = binascii.a2b_hex(event[0]).decode('ascii')
-        event[1] = bool(event[1])
-        event[2] = int(''.join(reversed([event[2][i:i + 2] for i in range(0, len(event[2]), 2)])), 16)
-        event[3] = list(map(lambda e: int(''.join(reversed([e[i:i + 2] for i in range(0, len(e), 2)])), 16), event[3]))
-        event[4] = binascii.a2b_hex(event[4]).decode('ascii')
-        event[5] = Address(binascii.a2b_hex(event[5])).b58encode()
-        return event
-
-    def put_dict(self, dict_args: dict, acct: Account, payer_acct: Account, gas_limit: int, gas_price: int):
-        put_dict = self.__abi_info.get_function('put_dict')
-        put_dict.set_params_value((dict_args,))
+    def test_list_and_str(self, list_msg: list, acct, payer_acct, gas_limit, gas_price):
+        func = self.__abi_info.get_function('testList')
+        func.set_params_value((list_msg,))
         tx_hash = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, acct, payer_acct, gas_limit,
-                                                       gas_price, put_dict, False)
+                                                       gas_price, func, False)
         return tx_hash
 
-    def get_dict(self):
-        get_dict = self.__abi_info.get_function('get_dict')
-        response = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0, get_dict,
-                                                        True)
-        return response
+    def test_dict(self, dict_msg: dict):
+        func = self.__abi_info.get_function('testMap')
+        func.set_params_value((dict_msg,))
+        value = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0,
+                                                     0, func, True)
+        value = binascii.a2b_hex(value)
+        return value.decode('ascii')
 
-    def put_dict_value(self, dict_value_args, acct: Account, payer_acct: Account, gas_limit: int,
-                       gas_price: int) -> str:
-        put_dict_value = self.__abi_info.get_function('put_dict_value')
-        put_dict_value.set_params_value((dict_value_args,))
+    def test_get_dict(self, key):
+        func = self.__abi_info.get_function('testGetMap')
+        func.set_params_value((key,))
+        value = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0, func, True)
+        value = binascii.a2b_hex(value)
+        return value.decode('ascii')
+
+    def test_dict_in_ctx(self, map_msg, acct, payer_acct, gas_limit, gas_price):
+        func = self.__abi_info.get_function('testMapInMap')
+        func.set_params_value((map_msg,))
         tx_hash = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, acct, payer_acct, gas_limit,
-                                                       gas_price, put_dict_value, False)
+                                                       gas_price, func, False)
         return tx_hash
 
-    def query_put_dict_value_event(self, tx_hash):
-        event = self.__sdk.rpc.get_smart_contract_event_by_tx_hash(tx_hash)
-        event = event.get('Notify', list())
-        if len(event) == 0:
-            return event
-        event = event[0]
-        event = event.get('States', list())
-        if len(event) == 0:
-            return event
-        event[0] = binascii.a2b_hex(event[0]).decode('ascii')
-        return event
+    def test_get_dict_in_ctx(self, key):
+        func = self.__abi_info.get_function('testGetMapInMap')
+        func.set_params_value((key,))
+        value = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0, func, True)
+        value = binascii.a2b_hex(value)
+        return value.decode('ascii')
 
-    def get_dict_value(self):
-        get_dict_value = self.__abi_info.get_function('get_dict_value')
-        response = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0,
-                                                        get_dict_value, True)
-        return response
-
-    def put_list(self, list_args: list, acct: Account, payer_acct: Account, gas_limit: int, gas_price: int):
-        put_list = self.__abi_info.get_function('put_list')
-        put_list.set_params_value((list_args,))
+    def test_transfer_multi(self, args, acct, payer_acct, gas_limit, gas_price):
+        func = self.__abi_info.get_function('transferMulti')
+        func.set_params_value((args,))
         tx_hash = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, acct, payer_acct, gas_limit,
-                                                       gas_price, put_list, False)
+                                                       gas_price, func, False)
         return tx_hash
-
-    def query_put_list_event(self, tx_hash):
-        event = self.__sdk.rpc.get_smart_contract_event_by_tx_hash(tx_hash)
-        event = event.get('Notify', list())
-        if len(event) == 0:
-            return event
-        event = event[0]
-        event = event.get('States', list())
-        if len(event) == 0:
-            return event
-        event[0] = binascii.a2b_hex(event[0]).decode('ascii')
-        event[1] = list(map(lambda e: int(''.join(reversed([e[i:i + 2] for i in range(0, len(e), 2)])), 16), event[1]))
-        return event
-
-    def get_list(self):
-        get_list = self.__abi_info.get_function('get_list')
-        response = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, None, None, 0, 0, get_list,
-                                                        True)
-        return response
-
-    def add_key_value_in_dict(self, key, value, acct: Account, payer_acct: Account, gas_limit: int, gas_price: int):
-        add_key_value_in_dict = self.__abi_info.get_function('add_key_value_in_dict')
-        add_key_value_in_dict.set_params_value((key, value))
-        tx_hash = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, acct, payer_acct, gas_limit,
-                                                       gas_price, add_key_value_in_dict, False)
-        return tx_hash
-
-    def query_add_key_value_in_dict_event(self, tx_hash):
-        event = self.__sdk.rpc.get_smart_contract_event_by_tx_hash(tx_hash)
-        event = event.get('Notify', list())
-        if len(event) == 0:
-            return event
-        event = event[0]
-        event = event.get('States', list())
-        if len(event) == 0:
-            return event
-        event[:3] = list(map(lambda e: binascii.a2b_hex(e).decode('ascii'), event[:3]))
-        event[3] = {k.decode('ascii'): v.decode('ascii') for k, v in deserialize_hex(event[3]).items()}
-        return event
-
-    def get_value_by_key(self, key, acct: Account, payer_acct: Account, gas_limit: int, gas_price: int):
-        get_value_by_key = self.__abi_info.get_function('get_value_by_key')
-        get_value_by_key.set_params_value((key,))
-        response = self.__sdk.neo_vm().send_transaction(self.__contract_address_bytearray, acct, payer_acct, gas_limit,
-                                                        gas_price)
-        return response
