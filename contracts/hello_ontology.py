@@ -1,6 +1,7 @@
 from boa.interop.System.Runtime import Notify
 from boa.interop.System.Storage import Put, Get, GetContext
 
+
 def Main(operation, args):
     if operation == 'name':
         return name()
@@ -17,7 +18,7 @@ def Main(operation, args):
         msgByteArray = args[2]
         msgStr = args[3]
         msgAddress = args[4]
-        return testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress)
+        return testHello(msgBool, msgInt, msgByteArray, msgStr, msgAddress)
     if operation == 'testList':
         if len(args) != 1:
             return False
@@ -35,11 +36,11 @@ def Main(operation, args):
         structList = args[0]
         return testStructList(structList)
     if operation == 'testStructListAndStr':
-        if len(args) !=2:
+        if len(args) != 2:
             return False
         structList = args[0]
         msgStr = args[1]
-        return testStructListAndStr(structList,msgStr)
+        return testStructListAndStr(structList, msgStr)
     if operation == 'testMap':
         msg = args[0]
         return testMap(msg)
@@ -61,14 +62,17 @@ def Main(operation, args):
         return transferMulti(states)
     return False
 
+
 def name():
     return 'name'
+
 
 def hello(msg):
     return msg
 
-def testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress):
-    Notify(["testHello",msgBool, msgInt, msgByteArray,msgStr,msgAddress])
+
+def testHello(msgBool, msgInt, msgByteArray, msgStr, msgAddress):
+    Notify(["testHello", msgBool, msgInt, msgByteArray, msgStr, msgAddress])
     resList = []
     resList.append(msgBool)
     resList.append(msgInt)
@@ -77,20 +81,25 @@ def testHello(msgBool, msgInt, msgByteArray,msgStr,msgAddress):
     resList.append(msgAddress)
     return resList
 
+
 def testList(msgList):
     Notify(["testMsgList", msgList])
     return msgList
 
+
 def testListAndStr(msgList, msgStr):
-    Notify(["testListAndStr",msgList,msgStr])
+    Notify(["testListAndStr", msgList, msgStr])
     resList = []
     resList.append(msgList)
     resList.append(msgStr)
     return resList
 
+
 def testStructList(structList):
     Notify(["testStructList", structList])
     return structList
+
+
 def testStructListAndStr(structList, msgStr):
     Notify(["testStructListAndStr", structList, msgStr])
     resList = []
@@ -98,31 +107,40 @@ def testStructListAndStr(structList, msgStr):
     resList.append(msgStr)
     return resList
 
+
 def testMap(msg):
     map = msg
     mapInfo = Serialize(map)
     Put(GetContext(), 'map_key', mapInfo)
     return map['key']
+
+
 def testGetMap(key):
     mapInfo = Get(GetContext(), 'map_key')
     map = Deserialize(mapInfo)
     return map[key]
 
+
 def testMapInMap(msg):
-    map = msg 
+    map = msg
     mapInfo = Serialize(map)
-    Notify(["mapInfo",mapInfo])
+    Notify(["mapInfo", mapInfo])
     mapInfo2 = Serialize(map['key'])
     Put(GetContext(), 'map_key2', mapInfo2)
     return mapInfo
+
+
 def testGetMapInMap(key):
     mapInfo = Get(GetContext(), 'map_key2')
-    Notify(["testGetMapInMap",mapInfo])
+    Notify(["testGetMapInMap", mapInfo])
     map = Deserialize(mapInfo)
     return map[key]
 
-def transfer(from_acct,to_acct,amount):
+
+def transfer(from_acct, to_acct, amount):
     return True
+
+
 def transferMulti(args):
     """
     :param args: the parameter is an array, containing element like [from, to, amount]

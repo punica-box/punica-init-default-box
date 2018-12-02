@@ -1,4 +1,4 @@
-# Hello Python Box
+# Python
 
 English | [中文](README_CN.md)
 
@@ -68,6 +68,6 @@ If you choose to create a virtual environment, you may need to activate your pro
 
 Install the necessary dependencies.
 
-```shell
+```shellDemo
 pip install -r requirements.txt
 ```
