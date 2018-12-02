@@ -13,6 +13,7 @@ from src.invoke_hello_python import InvokeHelloPython
 
 ontology = OntologySdk()
 remote_rpc_address = 'http://polaris3.ont.io:20336'
+remote_rpc_address = 'http://127.0.0.1:20336'
 ontology.set_rpc(remote_rpc_address)
 
 root_folder = os.path.dirname(os.path.dirname(__file__))
