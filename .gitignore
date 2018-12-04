@@ -106,3 +106,7 @@ venv.bak/
 
 .idea
 .vscode
+
+# node_modules
+./src/TypeScriptDemo/node_modules/
+./src/DapiDemo/node_modules/
