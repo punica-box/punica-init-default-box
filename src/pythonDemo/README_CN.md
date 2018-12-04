@@ -13,8 +13,6 @@
 
 欢迎来到本体，一个去中心化的世界正在等待着你。 `hello-ontology` 是一个教程性的 `python` 项目，它提供了有关如何使 用`ontology-python-sdk` 与本体区块链中的智能合约进行交互的基本示例。
 
-![ecosystem](img/ecosystem.png)
-
 ## 2. 配置开发环境
 
 在我们开始之前，有一些技术要求。 请安装以下内容：
