@@ -12,11 +12,9 @@ from ontology.utils.utils import deserialize_hex
 
 
 class InvokeHelloPython(object):
-    def __init__(self, sdk: OntologySdk, abi: dict, hex_contract_address: str):
+    def __init__(self, sdk: OntologySdk, hex_contract_address: str):
         if not isinstance(sdk, OntologySdk):
             raise RuntimeError('the type of sdk is error')
-        if not isinstance(abi, dict):
-            raise RuntimeError('the type of abi should be dict')
         if not isinstance(hex_contract_address, str):
             raise RuntimeError('the type of contract address should be str')
         if len(hex_contract_address) != 40:
@@ -54,18 +52,36 @@ class InvokeHelloPython(object):
                                                        gas_price, func, False)
         return tx_hash
 
-    def test_dict(self, dict_msg: dict):
+    def test_dict_pre_exec(self, dict_msg: dict):
         func = InvokeFunction('testMap')
         func.set_params_value(dict_msg)
         value = self.__sdk.neo_vm().send_transaction(self.__hex_contract_address, None, None, 0, 0, func, True)
-        value = ContractDataParser.to_utf8_str(value)
         return value
+
+    def test_dict(self, dict_msg: dict, pay_acct: Account, gas_limit, gas_price):
+        func = InvokeFunction('testMap')
+        func.set_params_value(dict_msg)
+        tx_hash = self.__sdk.neo_vm().send_transaction(self.__hex_contract_address, None, pay_acct, gas_limit,
+                                                       gas_price, func, False)
+        return tx_hash
+
+    def test_struct_list_and_str_pre_exec(self, struct_list, str_msg):
+        func = InvokeFunction('testStructListAndStr')
+        func.set_params_value(struct_list, str_msg)
+        value = self.__sdk.neo_vm().send_transaction(self.__hex_contract_address, None, None, 0, 0, func, True)
+        return value
+
+    def test_struct_list_and_str(self, struct_list, str_msg, payer_acct: Account, gas_limit, gas_price):
+        func = InvokeFunction('testStructListAndStr')
+        func.set_params_value(struct_list, str_msg)
+        tx_hash = self.__sdk.neo_vm().send_transaction(self.__hex_contract_address, None, payer_acct, gas_limit,
+                                                     gas_price, func, False)
+        return tx_hash
 
     def test_get_dict(self, key):
         func = InvokeFunction('testGetMap')
         func.set_params_value(key)
         value = self.__sdk.neo_vm().send_transaction(self.__hex_contract_address, None, None, 0, 0, func, True)
-        value = ContractDataParser.to_utf8_str(value)
         return value
 
     def test_dict_in_ctx(self, map_msg, payer_acct, gas_limit, gas_price):
