@@ -13,8 +13,6 @@ English | [中文](README_CN.md)
 
 Welcome to ontology, a decentralized world is waiting for your. `hello-ontology` is an tutorial `python` project, it provide basic example about how to use `ontology-python-sdk` to interact with your smart contract in ontology blockchain.
 
-![ecosystem](img/ecosystem.png)
-
 ## 2. Setting up the environment
 
 There are a few technical requirements before we start. Please install the following:

@@ -23,137 +23,155 @@ public class ContractController {
      * allTest
      */
     @RequestMapping(value = "/allTest", method = RequestMethod.GET)
-    public void allTest() throws Exception{
+    public String allTest() throws Exception{
         logger.info("ContractController allTest");
-        ContractService.nameTest();
-        ContractService.helloTest();
-        ContractService.testHelloTest();
-        ContractService.testListTest();
-        ContractService.testListAndStrTest();
-        ContractService.testStructListTest();
-        ContractService.testStructListAndStrTest();
-        ContractService.testMapTest();
-        ContractService.testGetMapTest();
-        ContractService.testMapInMapTest();
-        ContractService.testGetMapInMapTest();
-        ContractService.testTransferMultiTest();
+        StringBuffer stringBuffer = new StringBuffer();
+        appendString(stringBuffer, "1. Test Function name start -------");
+        appendString(stringBuffer, ContractService.nameTest());
+        appendString(stringBuffer, "2. Test Function hello start -------");
+        appendString(stringBuffer, ContractService.helloTest());
+        appendString(stringBuffer, "3. Test Function testHello start -------");
+        appendString(stringBuffer, ContractService.testHelloTest());
+        appendString(stringBuffer, "4. Test Function testList start -------");
+        appendString(stringBuffer,ContractService.testListTest());
+        appendString(stringBuffer,"5. Test Function testListAndStr start -------");
+        appendString(stringBuffer,ContractService.testListAndStrTest());
+        appendString(stringBuffer,"6. Test Function testStructList start -------");
+        appendString(stringBuffer,ContractService.testStructListTest());
+        appendString(stringBuffer,"7. Test Function testStructListAndStr start -------");
+        appendString(stringBuffer,ContractService.testStructListAndStrTest());
+        appendString(stringBuffer,"8. Test Function testMap start -------");
+        appendString(stringBuffer,ContractService.testMapTest());
+        appendString(stringBuffer,"9. Test Function testGetMap start -------");
+        appendString(stringBuffer,ContractService.testGetMapTest());
+        appendString(stringBuffer,"10. Test Function testMapInMap start -------");
+        appendString(stringBuffer,ContractService.testMapInMapTest());
+        appendString(stringBuffer,"11. Test Function testMapInMap start -------");
+        appendString(stringBuffer,ContractService.testGetMapInMapTest());
+        appendString(stringBuffer,"12. Test Function testTransferMulti start -------");
+        appendString(stringBuffer,ContractService.testTransferMultiTest());
+
+        return stringBuffer.toString();
     }
 
     /**
      * deployContractTest
      */
     @RequestMapping(value = "/deployContractTest", method = RequestMethod.GET)
-    public void deployContractTest() throws Exception{
+    public String deployContractTest() throws Exception{
         logger.info("ContractController deployContractTest");
-        ContractService.deployContractTest();
+        return ContractService.deployContractTest();
     }
 
     /**
      * helloTest
      */
     @RequestMapping(value = "/nameTest", method = RequestMethod.GET)
-    public void nameTest() throws Exception{
+    public String nameTest() throws Exception{
         logger.info("ContractController nameTest");
-        ContractService.nameTest();
+        return ContractService.nameTest();
     }
 
     /**
      * helloTest
      */
     @RequestMapping(value = "/helloTest", method = RequestMethod.GET)
-    public void helloTest() throws Exception{
+    public String helloTest() throws Exception{
         logger.info("ContractController helloTest");
-        ContractService.helloTest();
+        return ContractService.helloTest();
     }
 
     /**
      * testHelloTest
      */
     @RequestMapping(value = "/testHelloTest", method = RequestMethod.GET)
-    public void testHelloTest() throws Exception{
+    public String testHelloTest() throws Exception{
         logger.info("ContractController testHelloTest");
-        ContractService.testHelloTest();
+        return ContractService.testHelloTest();
     }
 
     /**
      * testNumListTest
      */
     @RequestMapping(value = "/testNumListTest", method = RequestMethod.GET)
-    public void testNumListTest() throws Exception{
+    public String testNumListTest() throws Exception{
         logger.info("ContractController testNumListTest");
-        ContractService.testListTest();
+        return ContractService.testListTest();
     }
 
     /**
      * testNumListAndStrTest
      */
     @RequestMapping(value = "/testNumListAndStrTest", method = RequestMethod.GET)
-    public void testNumListAndStrTest() throws Exception{
+    public String testNumListAndStrTest() throws Exception{
         logger.info("ContractController testNumListAndStrTest");
-        ContractService.testListAndStrTest();
+        return ContractService.testListAndStrTest();
     }
 
     /**
      * testStructListTest
      */
     @RequestMapping(value = "/testStructListTest", method = RequestMethod.GET)
-    public void testStructListTest() throws Exception{
+    public String testStructListTest() throws Exception{
         logger.info("ContractController testStructListTest");
-        ContractService.testStructListTest();
+        return ContractService.testStructListTest();
     }
 
     /**
      * testStructListAndStrTest
      */
     @RequestMapping(value = "/testStructListAndStrTest", method = RequestMethod.GET)
-    public void testStructListAndStrTest() throws Exception{
+    public String testStructListAndStrTest() throws Exception{
         logger.info("ContractController testStructListAndStrTest");
-        ContractService.testStructListAndStrTest();
+        return ContractService.testStructListAndStrTest();
     }
 
     /**
      * testMapTest
      */
     @RequestMapping(value = "/testMapTest", method = RequestMethod.GET)
-    public void testMapTest() throws Exception{
+    public String testMapTest() throws Exception{
         logger.info("ContractController testMapTest");
-        ContractService.testMapTest();
+        return ContractService.testMapTest();
     }
 
     /**
      * testGetMapTest
      */
     @RequestMapping(value = "/testGetMapTest", method = RequestMethod.GET)
-    public void testGetMapTest() throws Exception{
+    public String testGetMapTest() throws Exception{
         logger.info("ContractController testGetMapTest");
-        ContractService.testGetMapTest();
+        return ContractService.testGetMapTest();
     }
 
     /**
      * testMapInMapTest
      */
     @RequestMapping(value = "/testMapInMapTest", method = RequestMethod.GET)
-    public void testMapInMapTest() throws Exception{
+    public String testMapInMapTest() throws Exception{
         logger.info("ContractController testMapInMapTest");
-        ContractService.testMapInMapTest();
+        return ContractService.testMapInMapTest();
     }
 
     /**
      * testGetMapInMapTest
      */
     @RequestMapping(value = "/testGetMapInMapTest", method = RequestMethod.GET)
-    public void testGetMapInMapTest() throws Exception{
+    public String testGetMapInMapTest() throws Exception{
         logger.info("ContractController testGetMapInMapTest");
-        ContractService.testGetMapInMapTest();
+        return ContractService.testGetMapInMapTest();
     }
-
 
     /**
      * testTransferMultiTest
      */
     @RequestMapping(value = "/testTransferMultiTest", method = RequestMethod.GET)
-    public void testTransferMultiTest() throws Exception{
+    public String testTransferMultiTest() throws Exception{
         logger.info("ContractController testTransferMultiTest");
-        ContractService.testTransferMultiTest();
+        return ContractService.testTransferMultiTest();
+    }
+    
+    private void appendString(StringBuffer stringBuffer, String string){
+        stringBuffer.append(string).append("\r\n");
     }
 }
