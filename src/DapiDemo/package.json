@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ontology-dapi": "^0.4.6",
     "vue": "^2.5.2"
   },
   "devDependencies": {

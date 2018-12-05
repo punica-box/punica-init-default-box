@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 
+import { client } from 'ontology-dapi';
+client.registerClient({}); // First, register the dapi client
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
