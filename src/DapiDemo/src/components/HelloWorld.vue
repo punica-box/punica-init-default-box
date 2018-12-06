@@ -339,7 +339,7 @@ export default {
         return result;
       } catch (e) {
         console.log('onScCall error:', e);
-        alert('Some error happens. Please try later.')
+        alert('Some error happens. Please try later.' + e)
         return null;
       }
     }
