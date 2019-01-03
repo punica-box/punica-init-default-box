@@ -1,5 +1,6 @@
-from boa.interop.System.Runtime import Notify
+from boa.interop.System.Runtime import GetTime, CheckWitness, Log, Notify, Serialize, Deserialize
 from boa.interop.System.Storage import Put, Get, GetContext
+from boa.builtins import *
 
 
 def Main(operation, args):
