@@ -1,11 +1,11 @@
-from boa.interop.System.Runtime import GetTime, CheckWitness, Log, Notify, Serialize, Deserialize
-from boa.interop.System.Storage import Put, Get, GetContext
-from boa.builtins import *
+from ontology.interop.System.Runtime import GetTime, CheckWitness, Log, Notify, Serialize, Deserialize
+from ontology.interop.System.Storage import Put, Get, GetContext
+from ontology.builtins import *
 
 
 def Main(operation, args):
-    if operation == 'name':
-        return name()
+    if operation == 'name22':
+        return name22()
     if operation == 'hello':
         if len(args) != 1:
             return False
@@ -64,8 +64,8 @@ def Main(operation, args):
     return False
 
 
-def name():
-    return 'name'
+def name22():
+    return 'name22'
 
 
 def hello(msg):
