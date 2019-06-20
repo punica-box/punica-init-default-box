@@ -13,13 +13,13 @@
     "desc": "a description for your contract",
     "needStorage": true,
     "payer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-    "gasPrice": 0,
+    "gasPrice": 500,
     "gasLimit": 31000000
   },
   "invokeConfig": {
     "abi": "hello_ontology_abi.json",
     "defaultPayer": "AUr5QUfeBADq6BMY6Tp5yuMsUNGpsD7nLZ",
-    "gasPrice": 0,
+    "gasPrice": 500,
     "gasLimit": 20000,
     "sleepTime": 6,
     "functions": [
@@ -234,7 +234,7 @@
           }
         ],
         "signature": {},
-        "preExec": true
+        "preExec": false
       },
       {
         "operation": "testGetMapInMap",

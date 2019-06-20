@@ -143,7 +143,7 @@ describe('test contract', () => {
         ]
         const tx = Ont.TransactionBuilder.makeInvokeTransaction(method, params, contractAddr, '500', '30000', payer);
         Ont.TransactionBuilder.signTransaction(tx, privateKey);
-        const res = await client.sendRawTransaction(tx.serialize(), false, true); // preExec
+        const res = await client.sendRawTransaction(tx.serialize(), false); // preExec
         console.log(JSON.stringify(res));
         expect(res.Error).toBe(0);
     });
@@ -154,7 +154,7 @@ describe('test contract', () => {
             new Ont.Parameter('key', Ont.ParameterType.String, 'key2')
         ]
         const tx = Ont.TransactionBuilder.makeInvokeTransaction(method, params, contractAddr, '500', '30000');
-        const res = await client.sendRawTransaction(tx.serialize(), true, false); // preExec;
+        const res = await client.sendRawTransaction(tx.serialize(), false, false); // preExec;
         console.log(JSON.stringify(res));
         expect(res.Error).toBe(0);
     }, 6000);

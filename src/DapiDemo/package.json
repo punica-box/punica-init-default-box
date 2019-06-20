@@ -5,11 +5,13 @@
   "author": "MickeyWang <1244134672@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config builder/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node builder/build.js"
   },
   "dependencies": {
+    "ontology-dapi": "^0.4.6",
+    "ontology-ts-sdk": "^1.0.9",
     "vue": "^2.5.2"
   },
   "devDependencies": {

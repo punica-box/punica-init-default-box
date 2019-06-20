@@ -33,6 +33,12 @@ public class ContractService {
 
     public static void main(String[] args) {
         try{
+            if(true){
+                ontSdk.getWalletMgr().createAccount("passwordtest");
+                ontSdk.getWalletMgr().writeWallet();
+                System.out.println(ontSdk.getWalletMgr().getWallet().toString());
+                System.exit(0);
+            }
             // deployContract
             if (false) {
                 deployContractTest();
