@@ -84,7 +84,8 @@
             ]
           ],
           "test"
-        ]
+        ],
+        "preExec": true
       },
       {
         "testStructListAndStr": [
